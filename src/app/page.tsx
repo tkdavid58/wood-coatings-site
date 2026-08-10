@@ -26,9 +26,9 @@ export default async function Home({
 
   return (
     <div>
-      <div className="relative overflow-hidden border-b border-border bg-gradient-to-b from-surface-muted to-background">
+      <div className="relative isolate overflow-hidden border-b border-border bg-gradient-to-b from-surface-muted to-background">
         <HeroBackground />
-        <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
+        <div className="relative mx-auto max-w-6xl px-4 pt-16 pb-28 sm:px-6 sm:pt-24 sm:pb-40">
           <h1 className="mb-3 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl md:text-6xl">
             Find a wood coating
           </h1>
