@@ -15,14 +15,14 @@ export default function ProductCard({
       style={{ animationDelay: `${Math.min(index, 12) * 60}ms` }}
       className="animate-fade-in-up group flex flex-col rounded-xl border border-border/60 bg-surface p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
     >
-      <div className="mb-4 flex items-start justify-between gap-3">
-        <BrandBadge brand={product.brand} />
-        {product.category && (
-          <span className="whitespace-nowrap rounded-full bg-accent/10 px-2.5 py-1 text-xs font-medium text-accent">
-            {product.category}
-          </span>
-        )}
+      <div className="mb-4">
+        <BrandBadge brand={product.brand} size="lg" />
       </div>
+      {product.category && (
+        <span className="mb-1.5 block text-[11px] font-semibold uppercase tracking-wider text-accent">
+          {product.category}
+        </span>
+      )}
       <h3 className="mb-2 font-semibold text-foreground transition-colors group-hover:text-accent">
         {product.name}
       </h3>

@@ -95,7 +95,7 @@ export default function AskAnswer({ result }: { result: AskResult }) {
       <div className="mb-4 flex items-start justify-between gap-4">
         <div>
           {product.category && (
-            <span className="mb-2 inline-block rounded-full bg-accent/10 px-2.5 py-0.5 text-xs font-medium text-accent">
+            <span className="mb-2 block text-[11px] font-semibold uppercase tracking-wider text-accent">
               {product.category}
             </span>
           )}

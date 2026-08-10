@@ -30,10 +30,11 @@ export default async function Home({
         <HeroBackground />
         <div className="relative mx-auto max-w-6xl px-4 pt-16 pb-28 sm:px-6 sm:pt-24 sm:pb-40">
           <h1 className="mb-3 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl md:text-6xl">
-            Find a wood coating
+            Every finish. Every spec. One search.
           </h1>
           <p className="mb-10 max-w-xl text-base text-muted-foreground sm:text-lg">
-            Search the catalogue by product name, brand, category, or intended use case.
+            Search real technical data sheets from Renner, Sherwin-Williams, Sikkens, Anker Stuy
+            Coatings and ICRO by name, brand, category, or use case.
           </p>
 
           <div className="rounded-2xl border border-border bg-surface/90 p-4 shadow-lg backdrop-blur-sm sm:p-5">
@@ -50,22 +51,24 @@ export default async function Home({
         </div>
       </div>
 
-      <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
-        <div className="mb-4 text-sm text-muted-foreground">
-          {results.length} {results.length === 1 ? "product" : "products"} found
-        </div>
+      <div className="relative bg-background">
+        <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
+          <div className="mb-4 text-sm text-muted-foreground">
+            {results.length} {results.length === 1 ? "product" : "products"} found
+          </div>
 
-        {results.length === 0 ? (
-          <div className="rounded-xl border border-dashed border-border bg-surface p-10 text-center text-sm text-muted-foreground">
-            No products match your search. Try a different term or clear the filters.
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {results.map((product, index) => (
-              <ProductCard key={product.id} product={product} index={index} />
-            ))}
-          </div>
-        )}
+          {results.length === 0 ? (
+            <div className="rounded-xl border border-dashed border-border bg-surface p-10 text-center text-sm text-muted-foreground">
+              No products match your search. Try a different term or clear the filters.
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {results.map((product, index) => (
+                <ProductCard key={product.id} product={product} index={index} />
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

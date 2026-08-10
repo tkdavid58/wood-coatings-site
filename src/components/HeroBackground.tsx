@@ -18,7 +18,7 @@ export default function HeroBackground() {
   if (!src) return null;
 
   return (
-    <div className="absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
+    <div className="fixed inset-0 -z-10 overflow-hidden" aria-hidden="true">
       {/* eslint-disable-next-line @next/next/no-img-element -- arbitrary user-supplied image, dimensions unknown ahead of time */}
       <img
         src={src}
