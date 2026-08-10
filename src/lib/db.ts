@@ -1,9 +1,46 @@
 import Database from "better-sqlite3";
 import fs from "node:fs";
+import os from "node:os";
 import path from "node:path";
+import seedProducts from "../../data/seed-products.json";
 import type { NewProduct, Product, ProductSearchFilters } from "./types";
 
-const DB_PATH = process.env.DB_PATH || path.join(process.cwd(), "data", "wood-coatings.db");
+function resolveDbPath(): string {
+  if (process.env.DB_PATH) return process.env.DB_PATH;
+  // Serverless platforms (e.g. Vercel) ship a read-only filesystem except /tmp,
+  // and /tmp is wiped between cold starts, so this data won't persist long-term.
+  // Good enough for a live preview; use a persistent disk + DB_PATH for real use.
+  if (process.env.VERCEL) return path.join(os.tmpdir(), "wood-coatings.db");
+  return path.join(process.cwd(), "data", "wood-coatings.db");
+}
+
+const DB_PATH = resolveDbPath();
+
+const INSERT_PRODUCT_SQL = `
+  INSERT INTO products (
+    name, brand, type, use_cases, sheen, application_method,
+    coats_recommended, coverage, dry_time_touch, dry_time_recoat,
+    dry_time_cure, voc_content, thinner_cleanup, surface_prep,
+    description, sku
+  ) VALUES (
+    @name, @brand, @type, @use_cases, @sheen, @application_method,
+    @coats_recommended, @coverage, @dry_time_touch, @dry_time_recoat,
+    @dry_time_cure, @voc_content, @thinner_cleanup, @surface_prep,
+    @description, @sku
+  )
+`;
+
+function seedIfEmpty(db: Database.Database): void {
+  const { count } = db.prepare("SELECT COUNT(*) as count FROM products").get() as {
+    count: number;
+  };
+  if (count > 0) return;
+  const insert = db.prepare(INSERT_PRODUCT_SQL);
+  const insertAll = db.transaction((products: NewProduct[]) => {
+    for (const product of products) insert.run(product);
+  });
+  insertAll(seedProducts as NewProduct[]);
+}
 
 function createConnection(): Database.Database {
   fs.mkdirSync(path.dirname(DB_PATH), { recursive: true });
@@ -31,6 +68,7 @@ function createConnection(): Database.Database {
       created_at TEXT NOT NULL DEFAULT (datetime('now'))
     );
   `);
+  seedIfEmpty(db);
   return db;
 }
 
@@ -91,19 +129,7 @@ export function getAllUseCases(): string[] {
 }
 
 export function insertProduct(product: NewProduct): number {
-  const stmt = db.prepare(`
-    INSERT INTO products (
-      name, brand, type, use_cases, sheen, application_method,
-      coats_recommended, coverage, dry_time_touch, dry_time_recoat,
-      dry_time_cure, voc_content, thinner_cleanup, surface_prep,
-      description, sku
-    ) VALUES (
-      @name, @brand, @type, @use_cases, @sheen, @application_method,
-      @coats_recommended, @coverage, @dry_time_touch, @dry_time_recoat,
-      @dry_time_cure, @voc_content, @thinner_cleanup, @surface_prep,
-      @description, @sku
-    )
-  `);
+  const stmt = db.prepare(INSERT_PRODUCT_SQL);
   const result = stmt.run(product);
   return Number(result.lastInsertRowid);
 }

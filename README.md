@@ -15,11 +15,13 @@ without touching any code.
 
 ```bash
 npm install
-npm run db:seed   # creates data/wood-coatings.db and loads the starter products
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+Open [http://localhost:3000](http://localhost:3000). The database auto-seeds with the starter
+products the first time it's created, so this alone is enough to get going. Run
+`npm run db:seed` any time you want to reset the database back to that starter set (e.g. after
+testing the admin form).
 
 ### Admin password
 
@@ -76,18 +78,40 @@ Each product is a row in the `products` table with fields for the catalog listin
 `dry_time_recoat`, `dry_time_cure`, `voc_content`, `thinner_cleanup`, `surface_prep`, `sku`).
 The table is created automatically the first time the app or seed script runs.
 
-## Deployment notes
+## Deploying
 
-This app stores data in a SQLite file on local disk (`data/wood-coatings.db`), so it runs
-well on any host with a **persistent filesystem** (a VPS, a Docker container, Render,
-Railway, Fly.io, etc.) — just run `npm run build && npm run start` and make sure the `data/`
-directory persists across restarts/deploys.
+### Quick live preview on Vercel
 
-Serverless platforms with ephemeral filesystems (e.g. Vercel's default deployment) will
-reset the database on every deploy and won't share writes across instances. If you deploy
-there, swap `better-sqlite3` for a hosted database (e.g. [Turso](https://turso.tech/) or
-Postgres) — the query logic all lives in `src/lib/db.ts`, so that's the only file you'd need
-to change.
+The app detects Vercel automatically (via the `VERCEL` env var it sets) and points the
+database at `/tmp` instead of trying to write to the read-only deployment bundle, and the
+database auto-seeds with the starter catalog the moment it's created — so it deploys and
+works out of the box, no build step or manual seeding required.
+
+1. Go to [vercel.com/new](https://vercel.com/new) and sign in with GitHub.
+2. Choose **Import Git Repository** and select `tkdavid58/wood-coatings-site`.
+3. Pick the branch you want to deploy (a Vercel "Preview" deployment for this PR's branch,
+   or `main` once it's merged).
+4. Under **Environment Variables**, add `ADMIN_PASSWORD` with a password of your choosing
+   (skipping this leaves it at the `changeme` default — fine for a quick look, not for
+   sharing the link).
+5. Click **Deploy**.
+
+**Know before you rely on it:** Vercel's filesystem is read-only outside of `/tmp`, and
+`/tmp` doesn't persist between deploys and can be wiped between cold starts. That's fine for
+browsing the catalog, but products added through `/admin` may disappear after a while — this
+setup is for a live look, not for real data entry. For that, see the next section.
+
+### Persistent hosting (real usage)
+
+This app stores data in a SQLite file on local disk (`data/wood-coatings.db`), so for actual
+use — where products added through `/admin` need to stick around — run it somewhere with a
+**persistent filesystem** (a VPS, a Docker container, Render, Railway, Fly.io, etc.):
+`npm run build && npm run start`, making sure the `data/` directory persists across
+restarts/deploys.
+
+If you'd rather stay on a serverless platform long-term, swap `better-sqlite3` for a hosted
+database (e.g. [Turso](https://turso.tech/) or Postgres) — the query logic all lives in
+`src/lib/db.ts`, so that's the only file you'd need to change.
 
 ## Available scripts
 
