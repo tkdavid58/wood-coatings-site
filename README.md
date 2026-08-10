@@ -141,6 +141,20 @@ variants), it'll be nearly invisible on our light cards. Add its slug to
 `NEEDS_DARK_BACKDROP` in `src/components/BrandBadge.tsx` to render it on a small dark chip
 instead — or swap in a colour/dark logo variant if the manufacturer provides one.
 
+## Homepage hero image
+
+The homepage hero band supports an optional background photo, shown large, blurred, and
+overlaid with a gradient so the heading and search box stay readable on top of it (`src/
+components/HeroBackground.tsx`). To use one, add a file named exactly:
+
+```
+public/hero-bg.jpg    (or .jpeg / .png / .webp)
+```
+
+If no file is present, the hero just falls back to a plain gradient — nothing breaks either
+way. A wide, high-resolution photo works best since it's scaled up and blurred; there's no
+need to pre-blur it yourself.
+
 ## Deploying
 
 ### Quick live preview on Vercel

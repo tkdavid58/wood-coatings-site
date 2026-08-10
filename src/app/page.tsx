@@ -2,6 +2,7 @@ import { getAllBrands, getAllUseCases, searchProducts } from "@/lib/db";
 import { CATEGORIES } from "@/lib/categories";
 import SearchForm from "@/components/SearchForm";
 import ProductCard from "@/components/ProductCard";
+import HeroBackground from "@/components/HeroBackground";
 
 function firstValue(value: string | string[] | undefined): string {
   if (Array.isArray(value)) return value[0] ?? "";
@@ -25,16 +26,17 @@ export default async function Home({
 
   return (
     <div>
-      <div className="border-b border-border bg-gradient-to-b from-surface-muted to-background">
-        <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-14">
-          <h1 className="mb-2 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+      <div className="relative overflow-hidden border-b border-border bg-gradient-to-b from-surface-muted to-background">
+        <HeroBackground />
+        <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
+          <h1 className="mb-3 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl md:text-6xl">
             Find a wood coating
           </h1>
-          <p className="mb-8 max-w-xl text-sm text-muted-foreground sm:text-base">
+          <p className="mb-10 max-w-xl text-base text-muted-foreground sm:text-lg">
             Search the catalogue by product name, brand, category, or intended use case.
           </p>
 
-          <div className="rounded-2xl border border-border bg-surface p-4 shadow-sm sm:p-5">
+          <div className="rounded-2xl border border-border bg-surface/90 p-4 shadow-lg backdrop-blur-sm sm:p-5">
             <SearchForm
               q={q}
               brand={brand}
