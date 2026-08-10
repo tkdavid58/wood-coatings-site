@@ -21,12 +21,12 @@ const INSERT_PRODUCT_SQL = `
     name, brand, type, use_cases, sheen, application_method,
     coats_recommended, coverage, dry_time_touch, dry_time_recoat,
     dry_time_cure, voc_content, thinner_cleanup, surface_prep,
-    description, sku
+    description, sku, source_url
   ) VALUES (
     @name, @brand, @type, @use_cases, @sheen, @application_method,
     @coats_recommended, @coverage, @dry_time_touch, @dry_time_recoat,
     @dry_time_cure, @voc_content, @thinner_cleanup, @surface_prep,
-    @description, @sku
+    @description, @sku, @source_url
   )
 `;
 
@@ -65,6 +65,7 @@ function createConnection(): Database.Database {
       surface_prep TEXT NOT NULL DEFAULT '',
       description TEXT NOT NULL DEFAULT '',
       sku TEXT NOT NULL DEFAULT '',
+      source_url TEXT NOT NULL DEFAULT '',
       created_at TEXT NOT NULL DEFAULT (datetime('now'))
     );
   `);

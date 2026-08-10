@@ -117,6 +117,11 @@ export default async function AdminPage({
           <Field label="VOC content" name="voc_content" placeholder="e.g. < 250 g/L" />
           <Field label="Thinner / cleanup" name="thinner_cleanup" placeholder="e.g. Water" />
           <Field label="SKU" name="sku" />
+          <Field
+            label="Source / datasheet URL"
+            name="source_url"
+            placeholder="Link to the manufacturer's product or TDS page"
+          />
         </fieldset>
 
         <TextArea label="Description" name="description" />

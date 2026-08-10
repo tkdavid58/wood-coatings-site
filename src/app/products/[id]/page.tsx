@@ -97,6 +97,19 @@ export default async function ProductPage({
           </p>
         </div>
       )}
+
+      {product.source_url && (
+        <p className="mt-6 text-sm">
+          <a
+            href={product.source_url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-accent hover:text-accent-hover"
+          >
+            View official manufacturer datasheet &#8599;
+          </a>
+        </p>
+      )}
     </div>
   );
 }

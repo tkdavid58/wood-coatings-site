@@ -16,6 +16,7 @@ export interface Product {
   surface_prep: string;
   description: string;
   sku: string;
+  source_url: string;
   created_at: string;
 }
 

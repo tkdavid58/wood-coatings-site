@@ -54,6 +54,7 @@ export async function createProductAction(formData: FormData): Promise<void> {
     surface_prep: field("surface_prep"),
     description: field("description"),
     sku: field("sku"),
+    source_url: field("source_url"),
   });
 
   revalidatePath("/");
