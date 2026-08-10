@@ -33,8 +33,8 @@ export default async function Home({
             Wood Coatings, All in One Place
           </h1>
           <p className="mb-10 max-w-xl text-base text-muted-foreground sm:text-lg">
-            Search real technical data sheets from Renner, Sherwin-Williams, Sikkens, Anker Stuy
-            Coatings and ICRO by name, brand, category, or use case.
+            Search real manufacturer technical data sheets by product name, brand, category, or
+            use case.
           </p>
 
           <div className="rounded-2xl border border-border bg-surface/90 p-4 shadow-lg backdrop-blur-sm sm:p-5">
