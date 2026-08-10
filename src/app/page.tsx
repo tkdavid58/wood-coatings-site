@@ -51,24 +51,22 @@ export default async function Home({
         </div>
       </div>
 
-      <div className="relative bg-background">
-        <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
-          <div className="mb-4 text-sm text-muted-foreground">
-            {results.length} {results.length === 1 ? "product" : "products"} found
-          </div>
-
-          {results.length === 0 ? (
-            <div className="rounded-xl border border-dashed border-border bg-surface p-10 text-center text-sm text-muted-foreground">
-              No products match your search. Try a different term or clear the filters.
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {results.map((product, index) => (
-                <ProductCard key={product.id} product={product} index={index} />
-              ))}
-            </div>
-          )}
+      <div className="relative mx-auto max-w-6xl px-4 py-8 sm:px-6">
+        <div className="mb-4 text-sm text-muted-foreground">
+          {results.length} {results.length === 1 ? "product" : "products"} found
         </div>
+
+        {results.length === 0 ? (
+          <div className="rounded-xl border border-dashed border-border bg-surface p-10 text-center text-sm text-muted-foreground">
+            No products match your search. Try a different term or clear the filters.
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {results.map((product, index) => (
+              <ProductCard key={product.id} product={product} index={index} />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
