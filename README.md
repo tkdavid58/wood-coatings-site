@@ -1,10 +1,12 @@
 # Wood Coatings Catalogue
 
 A simple product catalogue site for wood coatings (varnishes, stains, oils, lacquers, etc.).
-Visitors can search by name, brand, category, or use case and view the full technical data
-sheet for each product (drying time, coverage, application method, and more). Products are
-stored in a local SQLite database, and a password-protected admin page lets you add new
-products without touching any code.
+Visitors can search by name, brand, category, or use case, browse by manufacturer on the
+Brands page, and view the full technical data sheet for each product (drying time, coverage,
+application method, and more). Products are stored in a local SQLite database, and a
+password-protected admin page lets you add new products without touching any code. Light and
+dark themes are both supported, following the visitor's system preference by default with a
+manual toggle in the header.
 
 ## Tech stack
 
@@ -67,9 +69,10 @@ src/
     categories.ts           # fixed list of filterable coating categories
     brands.ts               # brand name -> URL-safe slug helper (used to find logo files)
     types.ts                # Product type
-  components/               # SearchForm, ProductCard, BrandBadge, DataSheetTable, Header, Footer
+  components/               # SearchForm, ProductCard, BrandBadge, ThemeToggle, DataSheetTable, Header, Footer
   app/
     page.tsx                 # home page: search bar, filters, results list
+    brands/page.tsx           # brand directory (logos + product counts)
     products/[id]/page.tsx   # product details / technical data sheet
     admin/                   # password-gated page to add products
 ```
@@ -105,6 +108,11 @@ public/logos/icro.svg
 
 SVG, PNG, WebP, or JPEG all work. If no matching file is found for a brand, its name is shown
 in a plain text badge instead — nothing breaks, it just falls back gracefully.
+
+If a logo is light/white artwork meant for a dark background (common for "reversed" logo
+variants), it'll be nearly invisible on our light cards. Add its slug to
+`NEEDS_DARK_BACKDROP` in `src/components/BrandBadge.tsx` to render it on a small dark chip
+instead — or swap in a colour/dark logo variant if the manufacturer provides one.
 
 ## Deploying
 

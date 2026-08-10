@@ -31,7 +31,7 @@ export default async function AdminPage({
           Log in to add new products to the catalogue.
         </p>
         {errorCode && (
-          <p className="mb-4 rounded-md border border-danger/30 bg-danger/10 px-3 py-2 text-sm text-danger">
+          <p className="mb-4 rounded-lg border border-danger/30 bg-danger/10 px-3 py-2 text-sm text-danger">
             {ERROR_MESSAGES[errorCode] ?? "Something went wrong."}
           </p>
         )}
@@ -46,12 +46,12 @@ export default async function AdminPage({
               type="password"
               required
               autoFocus
-              className="w-full rounded-md border border-border bg-surface px-3 py-2 text-sm outline-none focus:border-accent focus:ring-1 focus:ring-accent"
+              className="w-full rounded-lg border border-border bg-surface px-3 py-2 text-sm outline-none transition-shadow focus:border-accent focus:ring-2 focus:ring-accent/30"
             />
           </div>
           <button
             type="submit"
-            className="rounded-md bg-accent px-4 py-2 text-sm font-medium text-accent-foreground transition-colors hover:bg-accent-hover"
+            className="rounded-full bg-accent px-5 py-2 text-sm font-medium text-accent-foreground transition-all hover:bg-accent-hover hover:shadow-md"
           >
             Log in
           </button>
@@ -75,7 +75,7 @@ export default async function AdminPage({
         <form action={logoutAction}>
           <button
             type="submit"
-            className="rounded-md border border-border px-3 py-1.5 text-xs font-medium text-muted-foreground hover:text-foreground"
+            className="rounded-full border border-border px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
             Log out
           </button>
@@ -83,7 +83,7 @@ export default async function AdminPage({
       </div>
 
       {errorCode && (
-        <p className="mb-4 rounded-md border border-danger/30 bg-danger/10 px-3 py-2 text-sm text-danger">
+        <p className="mb-4 rounded-lg border border-danger/30 bg-danger/10 px-3 py-2 text-sm text-danger">
           {ERROR_MESSAGES[errorCode] ?? "Something went wrong."}
         </p>
       )}
@@ -109,7 +109,7 @@ export default async function AdminPage({
               name="category"
               required
               defaultValue=""
-              className="w-full rounded-md border border-border bg-surface px-3 py-2 text-sm outline-none focus:border-accent focus:ring-1 focus:ring-accent"
+              className="w-full rounded-lg border border-border bg-surface px-3 py-2 text-sm outline-none transition-shadow focus:border-accent focus:ring-2 focus:ring-accent/30"
             >
               <option value="" disabled>
                 Select a category
@@ -153,7 +153,7 @@ export default async function AdminPage({
         <div>
           <button
             type="submit"
-            className="rounded-md bg-accent px-5 py-2 text-sm font-medium text-accent-foreground transition-colors hover:bg-accent-hover"
+            className="rounded-full bg-accent px-5 py-2 text-sm font-medium text-accent-foreground transition-all hover:bg-accent-hover hover:shadow-md"
           >
             Add product
           </button>
@@ -189,7 +189,7 @@ function Field({
         required={required}
         placeholder={placeholder}
         list={listId}
-        className="w-full rounded-md border border-border bg-surface px-3 py-2 text-sm outline-none focus:border-accent focus:ring-1 focus:ring-accent"
+        className="w-full rounded-lg border border-border bg-surface px-3 py-2 text-sm outline-none transition-shadow focus:border-accent focus:ring-2 focus:ring-accent/30"
       />
     </div>
   );
@@ -205,7 +205,7 @@ function TextArea({ label, name }: { label: string; name: string }) {
         id={name}
         name={name}
         rows={3}
-        className="w-full rounded-md border border-border bg-surface px-3 py-2 text-sm outline-none focus:border-accent focus:ring-1 focus:ring-accent"
+        className="w-full rounded-lg border border-border bg-surface px-3 py-2 text-sm outline-none transition-shadow focus:border-accent focus:ring-2 focus:ring-accent/30"
       />
     </div>
   );

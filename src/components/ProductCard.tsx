@@ -2,41 +2,31 @@ import Link from "next/link";
 import type { Product } from "@/lib/types";
 import BrandBadge from "./BrandBadge";
 
-export default function ProductCard({ product }: { product: Product }) {
+export default function ProductCard({
+  product,
+  index = 0,
+}: {
+  product: Product;
+  index?: number;
+}) {
   return (
     <Link
       href={`/products/${product.id}`}
-      className="group flex flex-col rounded-lg border border-border bg-surface p-4 transition-shadow hover:shadow-md"
+      style={{ animationDelay: `${Math.min(index, 12) * 60}ms` }}
+      className="animate-fade-in-up group flex flex-col rounded-xl border border-border/60 bg-surface p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
     >
-      <div className="mb-2 flex items-center justify-between gap-2">
+      <div className="mb-4 flex items-start justify-between gap-3">
+        <BrandBadge brand={product.brand} />
         {product.category && (
-          <span className="rounded-full bg-accent/10 px-2 py-0.5 text-xs font-medium text-accent">
+          <span className="whitespace-nowrap rounded-full bg-accent/10 px-2.5 py-1 text-xs font-medium text-accent">
             {product.category}
           </span>
         )}
-        <BrandBadge brand={product.brand} />
       </div>
-      <h3 className="mb-2 font-semibold text-foreground group-hover:text-accent">
+      <h3 className="mb-2 font-semibold text-foreground transition-colors group-hover:text-accent">
         {product.name}
       </h3>
-      <p className="mb-3 line-clamp-2 flex-1 text-sm text-muted-foreground">
-        {product.description}
-      </p>
-      <div className="flex flex-wrap gap-1">
-        {product.use_cases
-          .split(",")
-          .map((u) => u.trim())
-          .filter(Boolean)
-          .slice(0, 3)
-          .map((u) => (
-            <span
-              key={u}
-              className="rounded-full bg-surface-muted px-2 py-0.5 text-xs text-muted-foreground"
-            >
-              {u}
-            </span>
-          ))}
-      </div>
+      <p className="line-clamp-3 flex-1 text-sm text-muted-foreground">{product.description}</p>
     </Link>
   );
 }

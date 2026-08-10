@@ -129,6 +129,19 @@ export function getAllBrands(): string[] {
   return rows.map((r) => r.brand);
 }
 
+export interface BrandCount {
+  brand: string;
+  count: number;
+}
+
+export function getBrandCounts(): BrandCount[] {
+  return db
+    .prepare(
+      "SELECT brand, COUNT(*) as count FROM products WHERE brand != '' GROUP BY brand ORDER BY brand ASC"
+    )
+    .all() as BrandCount[];
+}
+
 export function getAllUseCases(): string[] {
   const rows = db.prepare("SELECT use_cases FROM products").all() as { use_cases: string }[];
   const set = new Set<string>();

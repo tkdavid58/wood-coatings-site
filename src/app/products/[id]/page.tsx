@@ -39,57 +39,54 @@ export default async function ProductPage({
     notFound();
   }
 
+  const useCases = product.use_cases
+    .split(",")
+    .map((u) => u.trim())
+    .filter(Boolean);
+
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
       <Link
         href="/"
-        className="mb-6 inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
+        className="mb-6 inline-flex items-center gap-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
       >
         &larr; Back to search
       </Link>
 
       {justAdded && (
-        <p className="mb-6 rounded-md border border-accent/30 bg-accent/10 px-3 py-2 text-sm text-accent">
+        <p className="animate-fade-in-up mb-6 rounded-lg border border-accent/30 bg-accent/10 px-3 py-2 text-sm text-accent">
           Product added to the catalogue.
         </p>
       )}
 
-      <div className="mb-6">
-        <div className="mb-2 flex items-center gap-2">
+      <div className="animate-fade-in-up mb-6 flex items-start justify-between gap-4">
+        <div>
           {product.category && (
-            <span className="rounded-full bg-accent/10 px-2.5 py-0.5 text-xs font-medium text-accent">
+            <span className="mb-2 inline-block rounded-full bg-accent/10 px-2.5 py-0.5 text-xs font-medium text-accent">
               {product.category}
             </span>
           )}
-          <BrandBadge brand={product.brand} size="lg" />
+          <h1 className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
+            {product.name}
+          </h1>
+          {product.type && (
+            <p className="mt-1 text-sm text-muted-foreground">{product.type}</p>
+          )}
         </div>
-        <h1 className="text-2xl font-semibold tracking-tight text-foreground">
-          {product.name}
-        </h1>
-        {product.type && (
-          <p className="mt-1 text-sm text-muted-foreground">{product.type}</p>
-        )}
+        <BrandBadge brand={product.brand} size="lg" />
       </div>
 
       {product.description && (
-        <p className="mb-6 text-sm leading-relaxed text-foreground">{product.description}</p>
+        <p className="animate-fade-in-up mb-4 text-sm leading-relaxed text-foreground">
+          {product.description}
+        </p>
       )}
 
-      {product.use_cases && (
-        <div className="mb-6 flex flex-wrap gap-1.5">
-          {product.use_cases
-            .split(",")
-            .map((u) => u.trim())
-            .filter(Boolean)
-            .map((u) => (
-              <span
-                key={u}
-                className="rounded-full bg-surface-muted px-2.5 py-1 text-xs text-muted-foreground"
-              >
-                {u}
-              </span>
-            ))}
-        </div>
+      {useCases.length > 0 && (
+        <p className="animate-fade-in-up mb-6 text-sm text-muted-foreground">
+          <span className="font-medium text-foreground">Ideal for: </span>
+          {useCases.join(", ")}
+        </p>
       )}
 
       <h2 className="mb-2 text-sm font-semibold text-foreground">Technical Data Sheet</h2>
@@ -98,7 +95,7 @@ export default async function ProductPage({
       {product.surface_prep && (
         <div className="mt-6">
           <h2 className="mb-2 text-sm font-semibold text-foreground">Surface Preparation</h2>
-          <p className="rounded-lg border border-border bg-surface p-4 text-sm leading-relaxed text-foreground">
+          <p className="rounded-xl border border-border bg-surface p-4 text-sm leading-relaxed text-foreground">
             {product.surface_prep}
           </p>
         </div>
@@ -110,7 +107,7 @@ export default async function ProductPage({
             href={product.source_url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-accent hover:text-accent-hover"
+            className="text-accent transition-colors hover:text-accent-hover"
           >
             View official manufacturer datasheet &#8599;
           </a>

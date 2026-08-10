@@ -18,7 +18,7 @@ export default function DataSheetTable({ product }: { product: Product }) {
 
   if (rows.length === 0) {
     return (
-      <div className="rounded-lg border border-dashed border-border bg-surface p-4 text-sm text-muted-foreground">
+      <div className="rounded-xl border border-dashed border-border bg-surface p-4 text-sm text-muted-foreground">
         Detailed specifications for this product could not be confirmed from public sources.
         {product.source_url ? " See the official datasheet linked below." : ""}
       </div>
@@ -26,7 +26,7 @@ export default function DataSheetTable({ product }: { product: Product }) {
   }
 
   return (
-    <div className="overflow-hidden rounded-lg border border-border bg-surface">
+    <div className="overflow-hidden rounded-xl border border-border bg-surface shadow-sm">
       <table className="w-full text-sm">
         <tbody>
           {rows.map((row, i) => (

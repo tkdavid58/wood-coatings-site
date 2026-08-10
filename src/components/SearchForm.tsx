@@ -10,6 +10,9 @@ interface SearchFormProps {
   useCases: string[];
 }
 
+const SELECT_CLASSES =
+  "w-full rounded-lg border border-border bg-surface px-3 py-2.5 text-sm outline-none transition-shadow focus:border-accent focus:ring-2 focus:ring-accent/30";
+
 export default function SearchForm({
   q,
   brand,
@@ -23,8 +26,19 @@ export default function SearchForm({
 
   return (
     <form method="GET" action="/" className="flex flex-col gap-4">
-      <div>
-        <label htmlFor="q" className="mb-1 block text-xs font-medium text-muted-foreground">
+      <div className="relative">
+        <svg
+          className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          aria-hidden="true"
+        >
+          <circle cx="11" cy="11" r="7" />
+          <path d="m21 21-4.3-4.3" strokeLinecap="round" />
+        </svg>
+        <label htmlFor="q" className="sr-only">
           Search by name or keyword
         </label>
         <input
@@ -32,8 +46,8 @@ export default function SearchForm({
           name="q"
           type="text"
           defaultValue={q}
-          placeholder="e.g. polyurethane, decking, satin lacquer..."
-          className="w-full rounded-md border border-border bg-surface px-3 py-2 text-sm outline-none focus:border-accent focus:ring-1 focus:ring-accent"
+          placeholder="Search by name or keyword, e.g. polyurethane, decking, satin lacquer..."
+          className="w-full rounded-full border border-border bg-surface py-3 pl-11 pr-4 text-sm outline-none transition-shadow focus:border-accent focus:ring-2 focus:ring-accent/30"
         />
       </div>
 
@@ -42,12 +56,7 @@ export default function SearchForm({
           <label htmlFor="brand" className="mb-1 block text-xs font-medium text-muted-foreground">
             Brand
           </label>
-          <select
-            id="brand"
-            name="brand"
-            defaultValue={brand}
-            className="w-full rounded-md border border-border bg-surface px-3 py-2 text-sm outline-none focus:border-accent focus:ring-1 focus:ring-accent"
-          >
+          <select id="brand" name="brand" defaultValue={brand} className={SELECT_CLASSES}>
             <option value="">All brands</option>
             {brands.map((b) => (
               <option key={b} value={b}>
@@ -63,12 +72,7 @@ export default function SearchForm({
           >
             Category
           </label>
-          <select
-            id="category"
-            name="category"
-            defaultValue={category}
-            className="w-full rounded-md border border-border bg-surface px-3 py-2 text-sm outline-none focus:border-accent focus:ring-1 focus:ring-accent"
-          >
+          <select id="category" name="category" defaultValue={category} className={SELECT_CLASSES}>
             <option value="">All categories</option>
             {categories.map((c) => (
               <option key={c} value={c}>
@@ -84,12 +88,7 @@ export default function SearchForm({
           >
             Use case
           </label>
-          <select
-            id="useCase"
-            name="useCase"
-            defaultValue={useCase}
-            className="w-full rounded-md border border-border bg-surface px-3 py-2 text-sm outline-none focus:border-accent focus:ring-1 focus:ring-accent"
-          >
+          <select id="useCase" name="useCase" defaultValue={useCase} className={SELECT_CLASSES}>
             <option value="">All use cases</option>
             {useCases.map((u) => (
               <option key={u} value={u}>
@@ -103,14 +102,14 @@ export default function SearchForm({
       <div className="flex gap-2">
         <button
           type="submit"
-          className="rounded-md bg-accent px-4 py-2 text-sm font-medium text-accent-foreground transition-colors hover:bg-accent-hover"
+          className="rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-accent-foreground transition-all hover:bg-accent-hover hover:shadow-md active:scale-[0.98]"
         >
           Search
         </button>
         {hasFilters && (
           <Link
             href="/"
-            className="rounded-md border border-border px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            className="rounded-full border border-border px-5 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
             Clear
           </Link>
