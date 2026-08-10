@@ -33,7 +33,11 @@ export default function BrandBadge({
       <img
         src={logoSrc}
         alt={brand}
-        className={size === "lg" ? "h-8 w-auto object-contain" : "h-5 w-auto object-contain"}
+        className={
+          size === "lg"
+            ? "h-8 w-auto rounded object-contain"
+            : "h-5 w-auto rounded object-contain"
+        }
       />
     );
   }
