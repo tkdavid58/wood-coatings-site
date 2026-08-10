@@ -16,6 +16,15 @@ const ROWS: { label: string; key: keyof Product }[] = [
 export default function DataSheetTable({ product }: { product: Product }) {
   const rows = ROWS.filter((row) => product[row.key]);
 
+  if (rows.length === 0) {
+    return (
+      <div className="rounded-lg border border-dashed border-border bg-surface p-4 text-sm text-muted-foreground">
+        Detailed specifications for this product could not be confirmed from public sources.
+        {product.source_url ? " See the official datasheet linked below." : ""}
+      </div>
+    );
+  }
+
   return (
     <div className="overflow-hidden rounded-lg border border-border bg-surface">
       <table className="w-full text-sm">
