@@ -23,9 +23,9 @@ export default function HeroBackground() {
       <img
         src={src}
         alt=""
-        className="h-full w-full scale-110 object-cover opacity-90 blur-md dark:opacity-60"
+        className="h-full w-full object-cover opacity-100 blur-sm dark:opacity-80"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/55 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/5 via-background/35 to-background" />
     </div>
   );
 }
