@@ -2,11 +2,12 @@
 
 A simple product catalogue site for wood coatings (varnishes, stains, oils, lacquers, etc.).
 Visitors can search by name, brand, category, or use case, browse by manufacturer on the
-Brands page, and view the full technical data sheet for each product (drying time, coverage,
-application method, and more). Products are stored in a local SQLite database, and a
-password-protected admin page lets you add new products without touching any code. Light and
-dark themes are both supported, following the visitor's system preference by default with a
-manual toggle in the header.
+Brands page, ask a direct question on the Ask page (e.g. "Renner YL-M602 drying time"), and
+view the full technical data sheet for each product (drying time, coverage, application
+method, and more). Products are stored in a local SQLite database, and a password-protected
+admin page lets you add new products without touching any code. Light and dark themes are
+both supported, following the visitor's system preference by default with a manual toggle in
+the header.
 
 ## Tech stack
 
@@ -68,14 +69,40 @@ src/
     auth.ts                # admin session / password check
     categories.ts           # fixed list of filterable coating categories
     brands.ts               # brand name -> URL-safe slug helper (used to find logo files)
+    ask.ts                  # rule-based natural-language question parser (see "Ask" below)
     types.ts                # Product type
-  components/               # SearchForm, ProductCard, BrandBadge, ThemeToggle, DataSheetTable, Header, Footer
+  components/               # SearchForm, ProductCard, BrandBadge, ThemeToggle, AskAnswer, DataSheetTable, Header, Footer
   app/
     page.tsx                 # home page: search bar, filters, results list
     brands/page.tsx           # brand directory (logos + product counts)
+    ask/page.tsx               # "Ask a question" page
     products/[id]/page.tsx   # product details / technical data sheet
     admin/                   # password-gated page to add products
 ```
+
+## Ask
+
+`/ask` lets visitors type a question like "Renner YL-M602 drying time" or "VOC content of
+Cetol HLS Plus" and get a direct answer. This is **not** an AI model — it's a small rule-based
+parser (`src/lib/ask.ts`) that:
+
+1. Matches keywords in the question against a fixed list of known spec fields (drying time,
+   coverage, VOC, sheen, application method, coats, thinner/cleanup, surface prep, SKU, use
+   cases, category, brand, description).
+2. Strips those keywords plus common filler words out of the question, and treats what's left
+   as the product being asked about.
+3. Matches that remainder against product SKUs and names already in the database — exact/
+   partial product codes are tried first (so "YL-M641" correctly narrows to just the two
+   YL-M641 variants rather than every Renner primer), falling back to a looser word-overlap
+   match on the product name.
+
+If several products match, it asks which one you meant instead of guessing. If a recognised
+field is blank for the matched product, it says so and links to the official datasheet rather
+than inventing an answer. Because it's keyword-based rather than a real language model, it
+only understands phrasing close to the field names it knows about — add more patterns to the
+`FIELD_RULES` list in `ask.ts` to broaden what it recognises. Swapping this for a real AI
+model later (e.g. the Anthropic API) is possible but would need an API key and has a
+per-query cost — the current version is free to run indefinitely.
 
 ## Database schema
 
@@ -88,9 +115,9 @@ The table is created automatically the first time the app or seed script runs.
 `type` is a free-text, product-specific description (e.g. "Exterior Wood Stain – Base Coat,
 Translucent, Satin") shown on the product's own page. `category` is the small, fixed set used
 for the Category filter dropdown — see `src/lib/categories.ts`. When adding a product through
-`/admin`, pick the closest of the four categories (Wood Stain, Varnish & Lacquer, Primer &
-Sealer, Oil & Wax); add a new one to `categories.ts` only if a product genuinely doesn't fit
-any of them, since the filter is only useful while the list stays short.
+`/admin`, pick the closest existing category (Wood Stain, Varnish & Lacquer, Primer & Sealer,
+Oil & Wax, or Additives & Hardeners); add a new one to `categories.ts` only if a product
+genuinely doesn't fit any of them, since the filter is only useful while the list stays short.
 
 ## Brand logos
 

@@ -12,6 +12,12 @@ export default function Header() {
         </Link>
         <nav className="flex items-center gap-5 text-sm">
           <Link
+            href="/ask"
+            className="text-muted-foreground transition-colors hover:text-foreground"
+          >
+            Ask
+          </Link>
+          <Link
             href="/brands"
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
