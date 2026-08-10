@@ -1,10 +1,10 @@
-# Wood Coatings Catalog
+# Wood Coatings Catalogue
 
-A simple product catalog site for wood coatings (varnishes, stains, oils, lacquers, etc.).
-Visitors can search by name, type, or use case and view the full technical data sheet for
-each product (drying time, coverage, application method, and more). Products are stored in
-a local SQLite database, and a password-protected admin page lets you add new products
-without touching any code.
+A simple product catalogue site for wood coatings (varnishes, stains, oils, lacquers, etc.).
+Visitors can search by name, brand, category, or use case and view the full technical data
+sheet for each product (drying time, coverage, application method, and more). Products are
+stored in a local SQLite database, and a password-protected admin page lets you add new
+products without touching any code.
 
 ## Tech stack
 
@@ -54,16 +54,20 @@ There are two ways to add new products:
 
 ```
 data/
-  seed-products.json     # starter catalog data, tracked in git
+  seed-products.json     # starter catalogue data, tracked in git
   wood-coatings.db       # generated SQLite file (git-ignored)
+public/
+  logos/                  # brand logo images (see "Brand logos" below)
 scripts/
   seed.ts                # (re)builds the database from seed-products.json
 src/
   lib/
     db.ts                 # database connection + queries (search, get by id, insert)
     auth.ts                # admin session / password check
-    types.ts               # Product type
-  components/               # SearchForm, ProductCard, DataSheetTable, Header, Footer
+    categories.ts           # fixed list of filterable coating categories
+    brands.ts               # brand name -> URL-safe slug helper (used to find logo files)
+    types.ts                # Product type
+  components/               # SearchForm, ProductCard, BrandBadge, DataSheetTable, Header, Footer
   app/
     page.tsx                 # home page: search bar, filters, results list
     products/[id]/page.tsx   # product details / technical data sheet
@@ -72,11 +76,35 @@ src/
 
 ## Database schema
 
-Each product is a row in the `products` table with fields for the catalog listing
-(`name`, `brand`, `type`, `use_cases`, `description`) and for the technical data sheet
-(`sheen`, `application_method`, `coats_recommended`, `coverage`, `dry_time_touch`,
+Each product is a row in the `products` table with fields for the catalogue listing
+(`name`, `brand`, `type`, `category`, `use_cases`, `description`) and for the technical data
+sheet (`sheen`, `application_method`, `coats_recommended`, `coverage`, `dry_time_touch`,
 `dry_time_recoat`, `dry_time_cure`, `voc_content`, `thinner_cleanup`, `surface_prep`, `sku`).
 The table is created automatically the first time the app or seed script runs.
+
+`type` is a free-text, product-specific description (e.g. "Exterior Wood Stain – Base Coat,
+Translucent, Satin") shown on the product's own page. `category` is the small, fixed set used
+for the Category filter dropdown — see `src/lib/categories.ts`. When adding a product through
+`/admin`, pick the closest of the four categories (Wood Stain, Varnish & Lacquer, Primer &
+Sealer, Oil & Wax); add a new one to `categories.ts` only if a product genuinely doesn't fit
+any of them, since the filter is only useful while the list stays short.
+
+## Brand logos
+
+Product cards and pages show each brand's logo instead of plain text where one is available.
+Drop a logo file into `public/logos/` named after the brand, lowercased with spaces and
+punctuation replaced by hyphens (see `src/lib/brands.ts` for the exact rule), e.g.:
+
+```
+public/logos/renner.svg
+public/logos/sherwin-williams.svg
+public/logos/sikkens.svg
+public/logos/anker-stuy-coatings.svg
+public/logos/icro.svg
+```
+
+SVG, PNG, WebP, or JPEG all work. If no matching file is found for a brand, its name is shown
+in a plain text badge instead — nothing breaks, it just falls back gracefully.
 
 ## Deploying
 
@@ -84,7 +112,7 @@ The table is created automatically the first time the app or seed script runs.
 
 The app detects Vercel automatically (via the `VERCEL` env var it sets) and points the
 database at `/tmp` instead of trying to write to the read-only deployment bundle, and the
-database auto-seeds with the starter catalog the moment it's created — so it deploys and
+database auto-seeds with the starter catalogue the moment it's created — so it deploys and
 works out of the box, no build step or manual seeding required.
 
 1. Go to [vercel.com/new](https://vercel.com/new) and sign in with GitHub.
@@ -98,7 +126,7 @@ works out of the box, no build step or manual seeding required.
 
 **Know before you rely on it:** Vercel's filesystem is read-only outside of `/tmp`, and
 `/tmp` doesn't persist between deploys and can be wiped between cold starts. That's fine for
-browsing the catalog, but products added through `/admin` may disappear after a while — this
+browsing the catalogue, but products added through `/admin` may disappear after a while — this
 setup is for a live look, not for real data entry. For that, see the next section.
 
 ### Persistent hosting (real usage)

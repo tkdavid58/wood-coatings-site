@@ -32,8 +32,9 @@ export async function createProductAction(formData: FormData): Promise<void> {
   const field = (key: string) => String(formData.get(key) || "").trim();
   const name = field("name");
   const type = field("type");
+  const category = field("category");
 
-  if (!name || !type) {
+  if (!name || !type || !category) {
     redirect("/admin?error=missing-fields");
   }
 
@@ -41,6 +42,7 @@ export async function createProductAction(formData: FormData): Promise<void> {
     name,
     brand: field("brand"),
     type,
+    category,
     use_cases: field("use_cases"),
     sheen: field("sheen"),
     application_method: field("application_method"),

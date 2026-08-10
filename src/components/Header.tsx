@@ -9,7 +9,7 @@ export default function Header() {
             🪵
           </span>
           <span className="text-lg font-semibold tracking-tight text-foreground">
-            Wood Coatings Catalog
+            Wood Coatings Catalogue
           </span>
         </Link>
         <nav className="flex items-center gap-4 text-sm">

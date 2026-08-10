@@ -15,8 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Wood Coatings Catalog",
-  description: "Search wood coatings by name, type, or use case and view technical data sheets.",
+  title: "Wood Coatings Catalogue",
+  description:
+    "Search wood coatings by name, brand, category, or use case and view technical data sheets.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

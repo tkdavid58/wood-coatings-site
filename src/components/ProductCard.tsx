@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Product } from "@/lib/types";
+import BrandBadge from "./BrandBadge";
 
 export default function ProductCard({ product }: { product: Product }) {
   return (
@@ -7,17 +8,17 @@ export default function ProductCard({ product }: { product: Product }) {
       href={`/products/${product.id}`}
       className="group flex flex-col rounded-lg border border-border bg-surface p-4 transition-shadow hover:shadow-md"
     >
-      <div className="mb-2 flex items-start justify-between gap-2">
-        <h3 className="font-semibold text-foreground group-hover:text-accent">
-          {product.name}
-        </h3>
+      <div className="mb-2 flex items-center justify-between gap-2">
+        {product.category && (
+          <span className="rounded-full bg-accent/10 px-2 py-0.5 text-xs font-medium text-accent">
+            {product.category}
+          </span>
+        )}
+        <BrandBadge brand={product.brand} />
       </div>
-      <p className="mb-1 text-xs font-medium uppercase tracking-wide text-accent">
-        {product.type}
-      </p>
-      {product.brand && (
-        <p className="mb-2 text-xs text-muted-foreground">by {product.brand}</p>
-      )}
+      <h3 className="mb-2 font-semibold text-foreground group-hover:text-accent">
+        {product.name}
+      </h3>
       <p className="mb-3 line-clamp-2 flex-1 text-sm text-muted-foreground">
         {product.description}
       </p>

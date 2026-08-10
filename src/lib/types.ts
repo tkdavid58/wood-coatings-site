@@ -3,6 +3,7 @@ export interface Product {
   name: string;
   brand: string;
   type: string;
+  category: string;
   use_cases: string;
   sheen: string;
   application_method: string;
@@ -24,6 +25,7 @@ export type NewProduct = Omit<Product, "id" | "created_at">;
 
 export interface ProductSearchFilters {
   q?: string;
-  type?: string;
+  brand?: string;
+  category?: string;
   useCase?: string;
 }

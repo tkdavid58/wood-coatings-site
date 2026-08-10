@@ -1,4 +1,5 @@
-import { getAllTypes, getAllUseCases, searchProducts } from "@/lib/db";
+import { getAllBrands, getAllUseCases, searchProducts } from "@/lib/db";
+import { CATEGORIES } from "@/lib/categories";
 import SearchForm from "@/components/SearchForm";
 import ProductCard from "@/components/ProductCard";
 
@@ -14,11 +15,12 @@ export default async function Home({
 }) {
   const sp = await searchParams;
   const q = firstValue(sp.q);
-  const type = firstValue(sp.type);
+  const brand = firstValue(sp.brand);
+  const category = firstValue(sp.category);
   const useCase = firstValue(sp.useCase);
 
-  const results = searchProducts({ q, type, useCase });
-  const types = getAllTypes();
+  const results = searchProducts({ q, brand, category, useCase });
+  const brands = getAllBrands();
   const useCases = getAllUseCases();
 
   return (
@@ -28,12 +30,20 @@ export default async function Home({
           Find a wood coating
         </h1>
         <p className="text-sm text-muted-foreground">
-          Search the catalog by product name, coating type, or intended use case.
+          Search the catalogue by product name, brand, category, or intended use case.
         </p>
       </div>
 
       <div className="mb-8 rounded-lg border border-border bg-surface-muted p-4">
-        <SearchForm q={q} type={type} useCase={useCase} types={types} useCases={useCases} />
+        <SearchForm
+          q={q}
+          brand={brand}
+          category={category}
+          useCase={useCase}
+          brands={brands}
+          categories={CATEGORIES}
+          useCases={useCases}
+        />
       </div>
 
       <div className="mb-4 text-sm text-muted-foreground">

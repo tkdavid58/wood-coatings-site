@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getProductById } from "@/lib/db";
 import DataSheetTable from "@/components/DataSheetTable";
+import BrandBadge from "@/components/BrandBadge";
 
 async function loadProduct(idParam: string) {
   const id = Number(idParam);
@@ -18,7 +19,7 @@ export async function generateMetadata({
   const { id } = await params;
   const product = await loadProduct(id);
   return {
-    title: product ? `${product.name} - Wood Coatings Catalog` : "Product not found",
+    title: product ? `${product.name} - Wood Coatings Catalogue` : "Product not found",
   };
 }
 
@@ -49,19 +50,24 @@ export default async function ProductPage({
 
       {justAdded && (
         <p className="mb-6 rounded-md border border-accent/30 bg-accent/10 px-3 py-2 text-sm text-accent">
-          Product added to the catalog.
+          Product added to the catalogue.
         </p>
       )}
 
       <div className="mb-6">
-        <p className="mb-1 text-xs font-medium uppercase tracking-wide text-accent">
-          {product.type}
-        </p>
+        <div className="mb-2 flex items-center gap-2">
+          {product.category && (
+            <span className="rounded-full bg-accent/10 px-2.5 py-0.5 text-xs font-medium text-accent">
+              {product.category}
+            </span>
+          )}
+          <BrandBadge brand={product.brand} size="lg" />
+        </div>
         <h1 className="text-2xl font-semibold tracking-tight text-foreground">
           {product.name}
         </h1>
-        {product.brand && (
-          <p className="mt-1 text-sm text-muted-foreground">by {product.brand}</p>
+        {product.type && (
+          <p className="mt-1 text-sm text-muted-foreground">{product.type}</p>
         )}
       </div>
 

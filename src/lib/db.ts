@@ -18,12 +18,12 @@ const DB_PATH = resolveDbPath();
 
 const INSERT_PRODUCT_SQL = `
   INSERT INTO products (
-    name, brand, type, use_cases, sheen, application_method,
+    name, brand, type, category, use_cases, sheen, application_method,
     coats_recommended, coverage, dry_time_touch, dry_time_recoat,
     dry_time_cure, voc_content, thinner_cleanup, surface_prep,
     description, sku, source_url
   ) VALUES (
-    @name, @brand, @type, @use_cases, @sheen, @application_method,
+    @name, @brand, @type, @category, @use_cases, @sheen, @application_method,
     @coats_recommended, @coverage, @dry_time_touch, @dry_time_recoat,
     @dry_time_cure, @voc_content, @thinner_cleanup, @surface_prep,
     @description, @sku, @source_url
@@ -52,6 +52,7 @@ function createConnection(): Database.Database {
       name TEXT NOT NULL,
       brand TEXT NOT NULL DEFAULT '',
       type TEXT NOT NULL,
+      category TEXT NOT NULL DEFAULT '',
       use_cases TEXT NOT NULL DEFAULT '',
       sheen TEXT NOT NULL DEFAULT '',
       application_method TEXT NOT NULL DEFAULT '',
@@ -92,9 +93,13 @@ export function searchProducts(filters: ProductSearchFilters): Product[] {
     );
     args.q = `%${filters.q.trim()}%`;
   }
-  if (filters.type && filters.type.trim()) {
-    clauses.push("type = @type");
-    args.type = filters.type.trim();
+  if (filters.brand && filters.brand.trim()) {
+    clauses.push("brand = @brand");
+    args.brand = filters.brand.trim();
+  }
+  if (filters.category && filters.category.trim()) {
+    clauses.push("category = @category");
+    args.category = filters.category.trim();
   }
   if (filters.useCase && filters.useCase.trim()) {
     clauses.push("use_cases LIKE @useCase");
@@ -115,6 +120,13 @@ export function getAllTypes(): string[] {
     .prepare("SELECT DISTINCT type FROM products ORDER BY type ASC")
     .all() as { type: string }[];
   return rows.map((r) => r.type);
+}
+
+export function getAllBrands(): string[] {
+  const rows = db
+    .prepare("SELECT DISTINCT brand FROM products WHERE brand != '' ORDER BY brand ASC")
+    .all() as { brand: string }[];
+  return rows.map((r) => r.brand);
 }
 
 export function getAllUseCases(): string[] {

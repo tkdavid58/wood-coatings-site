@@ -16,6 +16,7 @@ db.exec(`
     name TEXT NOT NULL,
     brand TEXT NOT NULL DEFAULT '',
     type TEXT NOT NULL,
+    category TEXT NOT NULL DEFAULT '',
     use_cases TEXT NOT NULL DEFAULT '',
     sheen TEXT NOT NULL DEFAULT '',
     application_method TEXT NOT NULL DEFAULT '',
@@ -38,12 +39,12 @@ const seedProducts: NewProduct[] = JSON.parse(fs.readFileSync(SEED_PATH, "utf-8"
 
 const insert = db.prepare(`
   INSERT INTO products (
-    name, brand, type, use_cases, sheen, application_method,
+    name, brand, type, category, use_cases, sheen, application_method,
     coats_recommended, coverage, dry_time_touch, dry_time_recoat,
     dry_time_cure, voc_content, thinner_cleanup, surface_prep,
     description, sku, source_url
   ) VALUES (
-    @name, @brand, @type, @use_cases, @sheen, @application_method,
+    @name, @brand, @type, @category, @use_cases, @sheen, @application_method,
     @coats_recommended, @coverage, @dry_time_touch, @dry_time_recoat,
     @dry_time_cure, @voc_content, @thinner_cleanup, @surface_prep,
     @description, @sku, @source_url
