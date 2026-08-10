@@ -30,7 +30,7 @@ export default async function Home({
         <HeroBackground />
         <div className="relative mx-auto max-w-6xl px-4 pt-16 pb-28 sm:px-6 sm:pt-24 sm:pb-40">
           <h1 className="mb-3 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl md:text-6xl">
-            Every finish. Every spec. One search.
+            The wood coatings catalogue, searched properly.
           </h1>
           <p className="mb-10 max-w-xl text-base text-muted-foreground sm:text-lg">
             Search real technical data sheets from Renner, Sherwin-Williams, Sikkens, Anker Stuy

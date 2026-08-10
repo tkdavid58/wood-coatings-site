@@ -145,7 +145,9 @@ instead — or swap in a colour/dark logo variant if the manufacturer provides o
 
 The homepage hero band supports an optional background photo, shown large, blurred, and
 overlaid with a gradient so the heading and search box stay readable on top of it (`src/
-components/HeroBackground.tsx`). To use one, add a file named exactly:
+components/HeroBackground.tsx`). It's pinned to the viewport (`position: fixed`) rather than
+scrolling with the page, so it stays put as a parallax backdrop while the results grid scrolls
+up over it. To use one, add a file named exactly:
 
 ```
 public/hero-bg.jpg    (or .jpeg / .png / .webp)
