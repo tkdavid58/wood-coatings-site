@@ -2,7 +2,7 @@
   {
     "name": "Renner YL-M648/-C02 Primer",
     "brand": "Renner",
-    "type": "Waterborne 1K/2K Urethane Wood Primer/Sealer",
+    "type": "Water-based 1K/2K Urethane Wood Primer/Sealer",
     "category": "Primer & Sealer",
     "use_cases": "New Kitchens, MDF, New Wood, Cabinetry",
     "sheen": "",
@@ -22,7 +22,7 @@
   {
     "name": "Renner Super Hang 1K/2K Topcoat T765",
     "brand": "Renner",
-    "type": "Waterborne Acrylic Self-Sealing Topcoat (1K/2K)",
+    "type": "Water-based Acrylic Self-Sealing Topcoat (1K/2K)",
     "category": "Varnish & Lacquer",
     "use_cases": "Furniture, Onsite Cabinets, Doors, Trim",
     "sheen": "",
@@ -40,9 +40,9 @@
     "source_url": "https://rennerwoodcoatings.nl/wp-content/uploads/2024/05/RENNER-WV-1K-SH-T765.pdf"
   },
   {
-    "name": "Renner Spray/Wipe Intermix Waterborne Stain System",
+    "name": "Renner Spray/Wipe Intermix Water-based Stain System",
     "brand": "Renner",
-    "type": "Waterborne Wood Stain (Intermixable Base System)",
+    "type": "Water-based Wood Stain (Intermixable Base System)",
     "category": "Wood Stain",
     "use_cases": "Interior Wood Surfaces, Furniture, Cabinetry",
     "sheen": "",
@@ -55,7 +55,7 @@
     "voc_content": "",
     "thinner_cleanup": "Water",
     "surface_prep": "Optimal application at 65-75°F with 40-60% relative humidity; used with Primer YL-M643/C02",
-    "description": "A waterborne interior wood stain system built from 12 intermixable base stains that can be combined into 127 hues, applied by brush, roller, pad, or spray and wiped for the desired effect.",
+    "description": "A water-based interior wood stain system built from 12 intermixable base stains that can be combined into 127 hues, applied by brush, roller, pad, or spray and wiped for the desired effect.",
     "sku": "",
     "source_url": "https://www.rennerwoodcoatings.com/coating-system/spray-wipe-intermix-waterborne-stain-system/"
   },
@@ -100,9 +100,9 @@
     "source_url": "https://sherlink.sherwin.com/sher-link/ViewHearsCountryCodeDoc?type=DP&sku=640325312&language=E"
   },
   {
-    "name": "Wood Classics Interior Waterborne Polyurethane Varnish",
+    "name": "Wood Classics Interior Water-based Polyurethane Varnish",
     "brand": "Sherwin-Williams",
-    "type": "Interior Waterborne Polyurethane Varnish",
+    "type": "Interior Water-based Polyurethane Varnish",
     "category": "Varnish & Lacquer",
     "use_cases": "Interior Wood Trim, Cabinetry, Doors, Windows, Residential Floors",
     "sheen": "Gloss, Satin",
@@ -115,7 +115,7 @@
     "voc_content": "",
     "thinner_cleanup": "",
     "surface_prep": "",
-    "description": "An ultra-clear waterborne varnish intended for interior architectural wood trim, cabinetry, doors, windows, and residential floors, formulated to create a tough, durable film.",
+    "description": "An ultra-clear water-based varnish intended for interior architectural wood trim, cabinetry, doors, windows, and residential floors, formulated to create a tough, durable film.",
     "sku": "",
     "source_url": "https://www.sherwin-williams.com/homeowners/products/wood-classics-interior-waterborne-polyurethane-varnish-pl-9523120"
   },
@@ -235,7 +235,7 @@
     "voc_content": "",
     "thinner_cleanup": "",
     "surface_prep": "Timber moisture content 12-16%; substrate must be clean, dry, and free from dust, dirt, grease, silicone and wax",
-    "description": "A water-borne, low-film-forming, translucent impregnating wood stain for exterior timber that penetrates the wood fibers, used as a stand-alone weather-resisting finish or as a base coat before Ankolux Aqua Woodcoat TP.",
+    "description": "A water-based, low-film-forming, translucent impregnating wood stain for exterior timber that penetrates the wood fibers, used as a stand-alone weather-resisting finish or as a base coat before Ankolux Aqua Woodcoat TP.",
     "sku": "16-0201",
     "source_url": "https://www.ankerstuy.ie/wp-content/uploads/2023/05/TDS-16-0201-Ankolux-Aqua-Impregnating-Woodstain-.pdf"
   },
@@ -255,7 +255,7 @@
     "voc_content": "",
     "thinner_cleanup": "",
     "surface_prep": "",
-    "description": "A water-borne, translucent, film-forming wood coating made from PU and modified alkyd emulsion, formulated to resist peeling and flaking on exterior cladding and dimensionally unstable timber, typically applied over Ankolux Aqua Impregnating Woodstain.",
+    "description": "A water-based, translucent, film-forming wood coating made from PU and modified alkyd emulsion, formulated to resist peeling and flaking on exterior cladding and dimensionally unstable timber, typically applied over Ankolux Aqua Impregnating Woodstain.",
     "sku": "16-0221",
     "source_url": "https://www.ankerstuy.ie/wp-content/uploads/2023/05/TDS-16-0221-Ankolux-Aqua-Woodcoat.pdf"
   },
@@ -275,12 +275,12 @@
     "voc_content": "",
     "thinner_cleanup": "",
     "surface_prep": "",
-    "description": "A single-component, waterborne interior topcoat blending self-crosslinking acrylic and polyurethane dispersions, designed to rival two-component systems in scratch, abrasion, and household-chemical resistance for interior furniture and joinery.",
+    "description": "A single-component, water-based interior topcoat blending self-crosslinking acrylic and polyurethane dispersions, designed to rival two-component systems in scratch, abrasion, and household-chemical resistance for interior furniture and joinery.",
     "sku": "17-087X",
     "source_url": "https://www.ankerstuy.com/product/17-087x-ankocryl-interior-pu-topcoat/"
   },
   {
-    "name": "Water-Borne Impregnating 420",
+    "name": "Water-based Impregnating 420",
     "brand": "ICRO",
     "type": "Impregnating Stain / Exterior Wood Preservative",
     "category": "Primer & Sealer",
@@ -340,7 +340,7 @@
     "source_url": "https://www.icro.it/en/product/water-based-coatings-8007-soft-matt/"
   },
   {
-    "name": "Water-Borne Varnish TIX 199",
+    "name": "Water-based Varnish TIX 199",
     "brand": "ICRO",
     "type": "Varnish (Single-Component Thixotropic, Water-Based, Spray)",
     "category": "Varnish & Lacquer",
@@ -362,7 +362,7 @@
   {
     "name": "Renner YL-M602/C02 Barrier Coat",
     "brand": "Renner",
-    "type": "Waterborne 2K Isolating Barrier Coat / Sealer Primer",
+    "type": "Water-based 2K Isolating Barrier Coat / Sealer Primer",
     "category": "Primer & Sealer",
     "use_cases": "Furniture Components, Doors, Shutters, Cabinetry, MDF, All Wood Types",
     "sheen": "",
@@ -382,7 +382,7 @@
   {
     "name": "Renner YL-M543/C02 White Primer",
     "brand": "Renner",
-    "type": "Waterborne 1K Primer (Single-Component, Ready-to-Use)",
+    "type": "Water-based 1K Primer (Single-Component, Ready-to-Use)",
     "category": "Primer & Sealer",
     "use_cases": "Furniture, MDF, Solid Wood, Cabinetry",
     "sheen": "",
@@ -402,7 +402,7 @@
   {
     "name": "Renner YL-M641/C02 White Primer",
     "brand": "Renner",
-    "type": "Waterborne 1K/2K Pigmentable Basecoat Primer",
+    "type": "Water-based 1K/2K Pigmentable Basecoat Primer",
     "category": "Primer & Sealer",
     "use_cases": "Furniture, Cabinetry, Doors, Millwork, MDF, Masonite, Kitchens, Bathrooms",
     "sheen": "",
@@ -422,7 +422,7 @@
   {
     "name": "Renner YL-M641/NTR Primer",
     "brand": "Renner",
-    "type": "Waterborne 1K/2K Pigmentable Basecoat Primer, Neutral/Clear Base",
+    "type": "Water-based 1K/2K Pigmentable Basecoat Primer, Neutral/Clear Base",
     "category": "Primer & Sealer",
     "use_cases": "Furniture, Cabinetry, Doors, Millwork, MDF",
     "sheen": "",
@@ -435,14 +435,14 @@
     "voc_content": "",
     "thinner_cleanup": "Water (cleanup). Catalysed with Renner YC-M401 hardener at 4%",
     "surface_prep": "",
-    "description": "The neutral/clear-base (NTR) variant of Renner's YL-M641 one/two-component water-based basecoat primer. Can be tinted with Renner's EY-M460 series waterborne pigment pastes (up to about 4%) to build a custom tone beneath the topcoat. NTR denotes the neutral/uncoloured base of the same M641 formulation sold pre-pigmented as /C02 (white) and other colour codes.",
+    "description": "The neutral/clear-base (NTR) variant of Renner's YL-M641 one/two-component water-based basecoat primer. Can be tinted with Renner's EY-M460 series water-based pigment pastes (up to about 4%) to build a custom tone beneath the topcoat. NTR denotes the neutral/uncoloured base of the same M641 formulation sold pre-pigmented as /C02 (white) and other colour codes.",
     "sku": "YL-M641/NTR",
     "source_url": "https://rennerwoodcoatings.nl/wp-content/uploads/2024/05/RENNER-WV-1K-PRIMER-M641-TR.pdf"
   },
   {
     "name": "Renner YL-M643/C02 White Primer",
     "brand": "Renner",
-    "type": "Waterborne 1K/2K White Basecoat Primer",
+    "type": "Water-based 1K/2K White Basecoat Primer",
     "category": "Primer & Sealer",
     "use_cases": "Furniture, Cabinetry, Doors, Millwork, MDF, All Wood Types, Refinishing",
     "sheen": "",
@@ -455,14 +455,14 @@
     "voc_content": "",
     "thinner_cleanup": "Water (cleanup). Optional 2K catalysation: approx. 8% Renner YC.1400 hardener, or approx. 10% YC-M404 hardener; pot life approx. 4 hours at 77F/25C once catalysed. On tannin-rich or resinous woods (oak, acacia, ash) or refinish jobs, 5-10% hardener (YC-M401/YC-M402) is recommended to prevent tannin bleed-through",
     "surface_prep": "Substrate must be clean and free of grease, wax and resin, and dry; sand bare wood or existing coating with 220-240 grit paper",
-    "description": "A mono/bi-component (1K/2K) white water-based basecoat primer for wood and MDF, offering high insulating and covering power for a smooth surface ahead of topcoating. Ready to use as a 1K product or catalysed as 2K for improved performance; can be overcoated with waterborne interior topcoats or solvent-based PU topcoats.",
+    "description": "A mono/bi-component (1K/2K) white water-based basecoat primer for wood and MDF, offering high insulating and covering power for a smooth surface ahead of topcoating. Ready to use as a 1K product or catalysed as 2K for improved performance; can be overcoated with water-based interior topcoats or solvent-based PU topcoats.",
     "sku": "YL-M643/C02",
     "source_url": "https://tlfinish.com/wp-content/uploads/2019/09/YL.M643.CO2_.pdf"
   },
   {
     "name": "Renner YL-M602 Barrier Coat",
     "brand": "Renner",
-    "type": "Waterborne 2K Urethane Barrier Coat / Primer (Clear/White)",
+    "type": "Water-based 2K Urethane Barrier Coat / Primer (Clear/White)",
     "category": "Primer & Sealer",
     "use_cases": "Furniture Components, Doors, Shutters, Interior Wood & MDF Substrates",
     "sheen": "",
@@ -482,7 +482,7 @@
   {
     "name": "Renner YL-M574 Barrier Coat",
     "brand": "Renner",
-    "type": "Waterborne 2K Insulating Basecoat for Parquet/Wood Flooring",
+    "type": "Water-based 2K Insulating Basecoat for Parquet/Wood Flooring",
     "category": "Primer & Sealer",
     "use_cases": "Parquet Flooring, Interior Wood Floors (Oily Wood Species e.g. Iroko, Merbau)",
     "sheen": "Matte",
@@ -502,7 +502,7 @@
   {
     "name": "Renner YL-M653 Sealer",
     "brand": "Renner",
-    "type": "Waterborne 1K High-Build Sanding Sealer",
+    "type": "Water-based 1K High-Build Sanding Sealer",
     "category": "Primer & Sealer",
     "use_cases": "Interior Wood Furniture, Cabinets, Doors, Window Frames, Turned Parts",
     "sheen": "",
@@ -515,14 +515,14 @@
     "voc_content": "",
     "thinner_cleanup": "Water",
     "surface_prep": "Automatic machine sanding compatible",
-    "description": "A one-component (1K), water-based high-build sanding sealer providing high transparency and quick drying for a smooth foundation coat prior to topcoating on interior wood furniture and joinery; compatible with waterborne and solvent-based topcoats including polyurethane and nitrocellulose.",
+    "description": "A one-component (1K), water-based high-build sanding sealer providing high transparency and quick drying for a smooth foundation coat prior to topcoating on interior wood furniture and joinery; compatible with water-based and solvent-based topcoats including polyurethane and nitrocellulose.",
     "sku": "YL-M653",
     "source_url": "https://www.waterbasedfinish.com/shop/topcoatsealer/yl-m653-renner-sanding-sealer-high-build-1k/"
   },
   {
     "name": "Renner YL-M663 Sealer",
     "brand": "Renner",
-    "type": "Waterborne 1K Transparent Primer/Sealer",
+    "type": "Water-based 1K Transparent Primer/Sealer",
     "category": "Primer & Sealer",
     "use_cases": "Interior Wood Surfaces",
     "sheen": "",
@@ -542,7 +542,7 @@
   {
     "name": "Renner YL-V678 Sealer",
     "brand": "Renner",
-    "type": "Waterborne Self-Sealer",
+    "type": "Water-based Self-Sealer",
     "category": "Primer & Sealer",
     "use_cases": "Interior Wood Surfaces, Professional/Trade Use",
     "sheen": "",
@@ -562,7 +562,7 @@
   {
     "name": "Renner YO-M760/SBN Top Coat",
     "brand": "Renner",
-    "type": "Waterborne Pigmented Interior Topcoat, White-Pigmentable Base",
+    "type": "Water-based Pigmented Interior Topcoat, White-Pigmentable Base",
     "category": "Varnish & Lacquer",
     "use_cases": "Furniture, Kitchens, Wardrobes, Cabinetry, Interior Joinery",
     "sheen": "Available in multiple sheen levels via a numeric code prefix; not specified by this base code",
@@ -582,7 +582,7 @@
   {
     "name": "Renner YO-M760/NTR Top Coat",
     "brand": "Renner",
-    "type": "Waterborne Pigmented Interior Topcoat, Neutral-Pigmentable Base (up to 18%)",
+    "type": "Water-based Pigmented Interior Topcoat, Neutral-Pigmentable Base (up to 18%)",
     "category": "Varnish & Lacquer",
     "use_cases": "Furniture, Kitchens, Wardrobes, Cabinetry, Interior Joinery",
     "sheen": "Available in multiple sheen levels via a numeric code prefix; not specified by this base code",
@@ -602,7 +602,7 @@
   {
     "name": "Renner YO-C762/SBN Top Coat",
     "brand": "Renner",
-    "type": "Waterborne 1K Acrylic/Polyurethane Pigmented Topcoat, White-Pigmentable Base",
+    "type": "Water-based 1K Acrylic/Polyurethane Pigmented Topcoat, White-Pigmentable Base",
     "category": "Varnish & Lacquer",
     "use_cases": "Furniture, Flat Parts, Turned Parts, Picture Frames, Skirting Boards",
     "sheen": "Available in multiple sheen levels via a numeric code prefix; not specified by this base code",
@@ -622,7 +622,7 @@
   {
     "name": "Renner YO-C762/NTR Top Coat",
     "brand": "Renner",
-    "type": "Waterborne 1K Acrylic/Polyurethane Pigmented Topcoat, Neutral-Pigmentable Base (up to 18%)",
+    "type": "Water-based 1K Acrylic/Polyurethane Pigmented Topcoat, Neutral-Pigmentable Base (up to 18%)",
     "category": "Varnish & Lacquer",
     "use_cases": "Furniture, Flat Parts, Turned Parts, Picture Frames, Skirting Boards",
     "sheen": "Available in multiple sheen levels via a numeric code prefix; not specified by this base code",
@@ -642,7 +642,7 @@
   {
     "name": "Renner YO-M785/SBN Top Coat",
     "brand": "Renner",
-    "type": "Waterborne 2K Matt/Semi-Matt Pigmented Topcoat (Converter), White-Pigmentable Base",
+    "type": "Water-based 2K Matt/Semi-Matt Pigmented Topcoat (Converter), White-Pigmentable Base",
     "category": "Varnish & Lacquer",
     "use_cases": "Flat Parts, Furniture (Interior 2K Lacquer System)",
     "sheen": "Matt to semi-matt range (TDS designation \"10-30\")",
@@ -662,7 +662,7 @@
   {
     "name": "Renner YO-M785/NTR Top Coat",
     "brand": "Renner",
-    "type": "Waterborne 2K Matt/Semi-Matt Pigmented Topcoat (Converter), Neutral-Pigmentable Base (up to 18%)",
+    "type": "Water-based 2K Matt/Semi-Matt Pigmented Topcoat (Converter), Neutral-Pigmentable Base (up to 18%)",
     "category": "Varnish & Lacquer",
     "use_cases": "Flat Parts, Furniture (Interior 2K Lacquer System)",
     "sheen": "Matt to semi-matt range (TDS designation \"10-30\")",
@@ -682,7 +682,7 @@
   {
     "name": "Renner YO-M863 Self Sealer/Topcoat",
     "brand": "Renner",
-    "type": "Waterborne 1K Clear Self-Sealer/Topcoat",
+    "type": "Water-based 1K Clear Self-Sealer/Topcoat",
     "category": "Varnish & Lacquer",
     "use_cases": "Open-Pore Wood Substrates, Furniture, Interior Wood Surfaces",
     "sheen": "Multiple gloss levels available",
@@ -702,7 +702,7 @@
   {
     "name": "Renner YO-M785 Self Sealer/Topcoat",
     "brand": "Renner",
-    "type": "Waterborne 2K Clear Interior Topcoat (Sheen 10-30)",
+    "type": "Water-based 2K Clear Interior Topcoat (Sheen 10-30)",
     "category": "Varnish & Lacquer",
     "use_cases": "Interior Wood Furniture, Cabinetry",
     "sheen": "10-30 (matte to satin range)",
@@ -722,7 +722,7 @@
   {
     "name": "Renner YO-M838 Self Sealer/Topcoat",
     "brand": "Renner",
-    "type": "Waterborne 1K/2K Zero-Sheen Wood Floor Topcoat/Self-Sealer",
+    "type": "Water-based 1K/2K Zero-Sheen Wood Floor Topcoat/Self-Sealer",
     "category": "Varnish & Lacquer",
     "use_cases": "Wood Flooring, Parquet",
     "sheen": "Zero Sheen (Matte/Invisible)",
@@ -742,7 +742,7 @@
   {
     "name": "Renner YO-05M755 Self Sealer/Topcoat",
     "brand": "Renner",
-    "type": "Waterborne 2K Natural-Effect Interior Finish (Self-Sealer/Topcoat)",
+    "type": "Water-based 2K Natural-Effect Interior Finish (Self-Sealer/Topcoat)",
     "category": "Varnish & Lacquer",
     "use_cases": "Furniture Components, Cabinet Doors, Panels, Gates",
     "sheen": "",
@@ -844,9 +844,9 @@
     "brand": "Renner",
     "type": "Retardant / Flow Additive (Water-Based)",
     "category": "Additives & Hardeners",
-    "use_cases": "Additive for Waterborne Renner Topcoats and Basecoats",
+    "use_cases": "Additive for Water-based Renner Topcoats and Basecoats",
     "sheen": "",
-    "application_method": "Not applied standalone - added directly to the waterborne base product with mechanical agitation before the base product is applied by its normal method",
+    "application_method": "Not applied standalone - added directly to the water-based base product with mechanical agitation before the base product is applied by its normal method",
     "coats_recommended": "",
     "coverage": "",
     "dry_time_touch": "",
@@ -855,7 +855,7 @@
     "voc_content": "",
     "thinner_cleanup": "",
     "surface_prep": "",
-    "description": "Retardant/flow additive blended in small quantities into waterborne Renner coatings to slow the drying process, extending open time for better levelling and a smoother finish.",
+    "description": "Retardant/flow additive blended in small quantities into water-based Renner coatings to slow the drying process, extending open time for better levelling and a smoother finish.",
     "sku": "AY-M444",
     "source_url": "https://allfinishes.co.uk/product/professional/interior/renner-ay-m444-retardant-5kg/"
   },
