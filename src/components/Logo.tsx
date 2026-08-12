@@ -19,7 +19,7 @@ export default function Logo() {
   if (src) {
     return (
       // eslint-disable-next-line @next/next/no-img-element -- logo file is uploaded at an arbitrary size, so intrinsic dimensions aren't known ahead of time
-      <img src={src} alt="Symphony Coatings" className="h-9 w-auto object-contain" />
+      <img src={src} alt="Symphony Coatings" className="h-12 w-auto object-contain sm:h-16" />
     );
   }
 

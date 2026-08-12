@@ -5,7 +5,7 @@ import ThemeToggle from "./ThemeToggle";
 export default function Header() {
   return (
     <header className="sticky top-0 z-10 border-b border-border bg-surface/80 backdrop-blur-md supports-[backdrop-filter]:bg-surface/60">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 sm:py-5">
         <Link href="/" className="flex items-center">
           <Logo />
         </Link>
