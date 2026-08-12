@@ -32,7 +32,7 @@ export default async function Home({
           <h1 className="mb-3 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl md:text-6xl">
             Wood Coatings, All in One Place
           </h1>
-          <p className="mb-10 max-w-xl text-base text-muted-foreground sm:text-lg">
+          <p className="mb-10 max-w-xl text-base text-foreground sm:text-lg">
             Search real manufacturer technical data sheets by product name, brand, category, or
             use case.
           </p>
